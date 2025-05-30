@@ -26,17 +26,7 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'abhiAirtel' => 'abhishek.kumar+wynk@wynk.in' }
   s.source           = { :git => 'https://github.com/abhiAirtel/XstreamFramework.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
   s.ios.deployment_target = '12.0'
+  s.vendored_frameworks = 'XStreamSDK.framework'
 
-  s.source_files = 'XStreamSDK.framework/**/*'
-  
-  # s.resource_bundles = {
-  #   'XstreamFireSDK' => ['XstreamFireSDK/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
