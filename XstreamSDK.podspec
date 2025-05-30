@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'XstreamFireSDK'
+  s.name             = 'XStreamSDK'
   s.version          = '0.1.0'
   s.summary          = 'A short description of XstreamFireSDK.'
 
@@ -22,7 +22,6 @@ TODO: Add long description of the pod here.
                        DESC
 
   s.homepage         = 'https://github.com/abhiAirtel/XstreamFramework'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'abhiAirtel' => 'abhishek.kumar+wynk@wynk.in' }
   s.source           = { :git => 'https://github.com/abhiAirtel/XstreamFramework.git', :tag => s.version.to_s }
