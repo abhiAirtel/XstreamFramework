@@ -1,0 +1,11 @@
+framework module XStreamSDK {
+  umbrella header "XStreamSDK.h"
+  export *
+
+  module * { export * }
+}
+
+module XStreamSDK.Swift {
+  header "XStreamSDK-Swift.h"
+  requires objc
+}
