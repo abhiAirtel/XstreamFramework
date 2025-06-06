@@ -1,0 +1,175 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0 effective-4.2 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
+// swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -Onone -enable-experimental-feature OpaqueTypeErasure -enable-bare-slash-regex -module-name XStreamSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import AdSupport
+import AudioToolbox
+import CommonCrypto
+import CoreTelephony
+import DeveloperToolsSupport
+import Foundation
+import MBProgressHUD
+import ObjectiveC
+import StoreKit
+import Swift
+import SwiftUI
+import SystemConfiguration
+import UIKit
+import WebKit
+@_exported import XStreamSDK
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_hasMissingDesignatedInitializers public class ToastManager {
+  @objc deinit
+}
+public enum ToastPosition {
+  case top
+  case center
+  case bottom
+  public static func == (a: XStreamSDK.ToastPosition, b: XStreamSDK.ToastPosition) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol XtreamInputInterfaceProtocol {
+  @objc var appVersion: Swift.String { get }
+  @objc var sourceName: Swift.String { get }
+  @objc var atvDID: Swift.String { get }
+  @objc var userId: Swift.String { get set }
+  @objc var msisdn: Swift.String { get }
+  @objc var appToken: Swift.String { get set }
+  @objc var deviceType: Swift.String { get }
+  @objc var operatingSystem: Swift.String { get }
+  @objc var buildNumber: Swift.String { get }
+  @objc var toEnableRemote: Swift.Bool { get }
+  @objc var faqQuestionsURL: Swift.String { get }
+}
+@objc public protocol XStreamSDKDelegate {
+  @objc func didSendAnalyticsEventWith(with payload: [Swift.String : Swift.AnyObject], critical isCritical: Swift.Bool, other info: [Swift.String : Swift.AnyObject]?)
+}
+@objc public enum XStreamSdkFlavour : Swift.Int {
+  case PreProd
+  case Dev2
+  case Release
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum XStreamSdkState : Swift.Int {
+  case UnInitialized
+  case Initialized
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class NetworkProperties {
+  public struct Constants {
+    public struct Keys {
+      public static let deviceID: Swift.String
+      public static let deviceType: Swift.String
+      public static let osName: Swift.String
+      public static let osVersion: Swift.String
+      public static let appVersion: Swift.String
+      public static let buildNumber: Swift.String
+      public static let userID: Swift.String
+      public static let userToken: Swift.String
+      public static let languageCode: Swift.String
+      public static let deviceAdvertisingIdentifier: Swift.String
+      public static let deviceManufacturer: Swift.String
+      public static let deviceModel: Swift.String
+      public static let deviceName: Swift.String
+    }
+  }
+  final public var deviceID: Swift.String
+  final public var deviceAdvertisingIdentifier: Swift.String
+  final public var deviceManufacturer: Swift.String
+  final public var deviceModel: Swift.String
+  final public var deviceName: Swift.String
+  final public var deviceType: Swift.String
+  final public var osName: Swift.String
+  final public var osVersion: Swift.String
+  final public var appVersion: Swift.String
+  final public var buildNumber: Swift.String
+  final public var userID: Swift.String
+  final public var userToken: Swift.String
+  final public var networkQuality: Swift.Int
+  final public var networkType: Swift.Int {
+    get
+  }
+  final public var networkConnectionType: Swift.Int {
+    get
+  }
+  final public var languageCode: Swift.String
+  @objc deinit
+}
+public enum ResponseType {
+  case error(uniqueIdentifier: Swift.String?, urlRequest: Foundation.URLRequest, error: Foundation.NSError)
+  case progress(uniqueIdentifier: Swift.String?, urlRequest: Foundation.URLRequest, result: Foundation.Progress)
+  case completed(uniqueIdentifier: Swift.String?, urlRequest: Foundation.URLRequest)
+  case responseArray(uniqueIdentifier: Swift.String?, urlRequest: Foundation.URLRequest, result: Foundation.NSArray?, cached: Swift.Bool)
+  case responseDictionary(uniqueIdentifier: Swift.String?, urlRequest: Foundation.URLRequest, result: Foundation.NSDictionary?, cached: Swift.Bool)
+  case responseData(uniqueIdentifier: Swift.String?, urlRequest: Foundation.URLRequest, result: Foundation.NSData?, cached: Swift.Bool)
+}
+@objc public enum APICallCachePolicy : Swift.Int {
+  case notApplicable = 0
+  case returnBoth = 1
+  case returnIgnoringCache = 2
+  case returnOnlyCache = 3
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public typealias CompletionHandlerType = (XStreamSDK.ResponseType) -> Swift.Void
+public struct ApiRequestTask {
+  public static func get(uniqueIdentifier: Swift.String?, url: Swift.String, addtionalHeaderFeilds: Swift.Dictionary<Swift.String, Swift.String>?, isSigned: Swift.Bool, expiryDuration: Swift.Double?, cachePolicy: XStreamSDK.APICallCachePolicy, completion: @escaping XStreamSDK.CompletionHandlerType) throws -> XStreamSDK.ApiRequestTask
+  public static func post(uniqueIdentifier: Swift.String?, url: Swift.String, body: Swift.Dictionary<Swift.String, Swift.AnyObject>?, addtionalHeaderFeilds: Swift.Dictionary<Swift.String, Swift.String>?, isSigned: Swift.Bool, isEcodingRequired: Swift.Bool, expiryDuration: Swift.Double?, cachePolicy: XStreamSDK.APICallCachePolicy, completion: @escaping XStreamSDK.CompletionHandlerType) throws -> XStreamSDK.ApiRequestTask
+  public static func put(uniqueIdentifier: Swift.String?, url: Swift.String, body: Swift.Dictionary<Swift.String, Swift.AnyObject>?, addtionalHeaderFeilds: Swift.Dictionary<Swift.String, Swift.String>?, isSigned: Swift.Bool, expiryDuration: Swift.Double?, cachePolicy: XStreamSDK.APICallCachePolicy, completion: @escaping XStreamSDK.CompletionHandlerType) throws -> XStreamSDK.ApiRequestTask
+  public static func delete(uniqueIdentifier: Swift.String?, url: Swift.String, body: Swift.Dictionary<Swift.String, Swift.AnyObject>?, addtionalHeaderFeilds: Swift.Dictionary<Swift.String, Swift.String>?, isSigned: Swift.Bool, expiryDuration: Swift.Double?, cachePolicy: XStreamSDK.APICallCachePolicy, completion: @escaping XStreamSDK.CompletionHandlerType) throws -> XStreamSDK.ApiRequestTask
+  public func cancel()
+  public func pause()
+  public func resume()
+}
+public struct DownloadRequestTask {
+  public static func get(uniqueIdentifier: Swift.String?, url: Swift.String, inBackground: Swift.Bool, isSigned: Swift.Bool, downloadAtPath: Swift.String, completion: @escaping XStreamSDK.CompletionHandlerType) throws -> XStreamSDK.DownloadRequestTask
+  public func cancel()
+  public func pause()
+  public func resume()
+}
+public struct GroupRequestTask {
+  public func cancel()
+  public func pause()
+  public func resume()
+}
+@_hasMissingDesignatedInitializers @objcMembers public class XStreamCore {
+  public static let sharedInstance: XStreamSDK.XStreamCore
+  @objc deinit
+}
+extension XStreamSDK.XStreamCore {
+  @objc dynamic public func inititializeSdk(with application: Swift.AnyObject?, having appKey: Swift.String?, and identifier: Swift.String?, with isDebuggable: Swift.Bool, for flavour: XStreamSDK.XStreamSdkFlavour, input paramter: any XStreamSDK.XtreamInputInterfaceProtocol, toSendAnalytics fromSDK: Swift.Bool)
+  @objc dynamic public func generateOTPForNumber(mssisdn: Swift.String?, completionHandler: @escaping (_ isSuccess: Swift.Bool) -> Swift.Void)
+  @objc dynamic public func authorizeUser(with otp: Swift.String?, and msisdn: Swift.String?, completionHandler: @escaping (_ isSuccess: Swift.Bool, _ response: Foundation.NSDictionary?) -> Swift.Void)
+  @objc dynamic public func setXStreamCore(delegate del: any XStreamSDK.XStreamSDKDelegate)
+  @objc dynamic public class func getEntryPointForSDK(url value: Swift.String?) -> UIKit.UIView
+  @objc dynamic public func getSDKLaunchViewController() -> UIKit.UIViewController?
+  @objc dynamic public func sendXstremeCardVisibleToUserEvent(source name: Swift.String)
+  @objc dynamic public func sendCardCickEvent(source name: Swift.String)
+}
+extension XStreamSDK.ToastPosition : Swift.Equatable {}
+extension XStreamSDK.ToastPosition : Swift.Hashable {}
+extension XStreamSDK.XStreamSdkFlavour : Swift.Equatable {}
+extension XStreamSDK.XStreamSdkFlavour : Swift.Hashable {}
+extension XStreamSDK.XStreamSdkFlavour : Swift.RawRepresentable {}
+extension XStreamSDK.XStreamSdkState : Swift.Equatable {}
+extension XStreamSDK.XStreamSdkState : Swift.Hashable {}
+extension XStreamSDK.XStreamSdkState : Swift.RawRepresentable {}
+extension XStreamSDK.APICallCachePolicy : Swift.Equatable {}
+extension XStreamSDK.APICallCachePolicy : Swift.Hashable {}
+extension XStreamSDK.APICallCachePolicy : Swift.RawRepresentable {}

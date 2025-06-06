@@ -26,6 +26,6 @@ TODO: Add long description of the pod here.
   s.author           = { 'abhiAirtel' => 'abhishek.kumar+wynk@wynk.in' }
   s.source           = { :git => 'https://github.com/abhiAirtel/XstreamFramework.git', :tag => s.version.to_s }
   s.ios.deployment_target = '12.0'
-  s.vendored_frameworks = 'XStreamSDK.framework'
+  s.vendored_frameworks = 'XStreamSDK.xcframework'
 
 end

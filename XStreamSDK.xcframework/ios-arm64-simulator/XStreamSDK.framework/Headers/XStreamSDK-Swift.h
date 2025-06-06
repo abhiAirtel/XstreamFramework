@@ -302,7 +302,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
-typedef SWIFT_ENUM(NSInteger, APICallCachePolicy, closed) {
+typedef SWIFT_ENUM(NSInteger, APICallCachePolicy, open) {
   APICallCachePolicyNotApplicable = 0,
   APICallCachePolicyReturnBoth = 1,
   APICallCachePolicyReturnIgnoringCache = 2,
@@ -330,13 +330,13 @@ SWIFT_PROTOCOL("_TtP10XStreamSDK18XStreamSDKDelegate_")
 - (void)didSendAnalyticsEventWithWith:(NSDictionary<NSString *, id> * _Nonnull)payload critical:(BOOL)isCritical other:(NSDictionary<NSString *, id> * _Nullable)info;
 @end
 
-typedef SWIFT_ENUM(NSInteger, XStreamSdkFlavour, closed) {
+typedef SWIFT_ENUM(NSInteger, XStreamSdkFlavour, open) {
   XStreamSdkFlavourPreProd = 0,
   XStreamSdkFlavourDev2 = 1,
   XStreamSdkFlavourRelease = 2,
 };
 
-typedef SWIFT_ENUM(NSInteger, XStreamSdkState, closed) {
+typedef SWIFT_ENUM(NSInteger, XStreamSdkState, open) {
   XStreamSdkStateUnInitialized = 0,
   XStreamSdkStateInitialized = 1,
 };
