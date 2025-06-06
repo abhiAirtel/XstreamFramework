@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'XStreamSDK'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of XstreamFireSDK.'
+  s.summary          = 'A short description of XStreamSDK.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -27,5 +27,6 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/abhiAirtel/XstreamFramework.git', :tag => s.version.to_s }
   s.ios.deployment_target = '12.0'
   s.vendored_frameworks = 'XStreamSDK.xcframework'
+  s.preserve_paths      = "XStreamSDK.xcframework"
 
 end
